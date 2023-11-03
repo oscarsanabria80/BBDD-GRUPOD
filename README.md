@@ -84,3 +84,17 @@ begin
 end; 
 /
 </pre>
+
+
+- Agrupal excepciones
+<pre>
+CREATE OR REPLACE PROCEDURE Excepciones (p_clin personas.NIF%type,p_codac actividades.codigo%type)
+IS
+BEGIN
+    Clienteinexistente(p_clin);
+    actividadinexistente(p_codac);
+    todoincluido(p_codac);
+    noactividad(p_clin, p_codac);
+END;
+/
+</pre>
