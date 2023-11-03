@@ -43,7 +43,7 @@ end;
 /
 </pre>
 
--Todo incluido
+- Todo incluido
 
 <pre>
 CREATE OR REPLACE PROCEDURE todoincluido (v_codActividad actividades.codigo%type)
