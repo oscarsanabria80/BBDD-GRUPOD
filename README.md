@@ -98,3 +98,34 @@ BEGIN
 END;
 /
 </pre>
+
+
+- Actividad abonada 
+
+<pre>
+CREATE OR REPLACE PROCEDURE A_Abonada (p_codcl personas.nif%type,
+p_codacti actividades.codigo%type)
+IS
+    CURSOR c_abonada IS
+    SELECT *
+    FROM actividadesrealizadas
+    WHERE codigoestancia = (SELECT codigo FROM estancias WHERE
+    nifcliente=p_codcl) AND codigoactividad=p_codacti
+    ORDER BY fecha DESC
+    FETCH FIRST 1 ROWS ONLY;
+    v_actabo actividadesrealizadas%ROWTYPE;
+BEGIN
+    OPEN c_abonada;
+    FETCH c_abonada INTO v_actabo;
+    IF v_actabo.abonado = 'N' THEN
+
+    DBMS_OUTPUT.PUT_LINE('FALSE');
+    ELSE
+    DBMS_OUTPUT.PUT_LINE('TRUE');
+    END IF;
+
+    CLOSE c_abonada;
+
+END;
+/
+</pre>
