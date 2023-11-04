@@ -3,6 +3,8 @@
 codigo que ha realizado y un FALSE en caso contrario. Debes controlar las siguientes excepciones:Cliente inexistente, Actividad Inexistente, Actividad realizada en regimen de Todo Incluido
 y El cliente nunca ha realizado esa actividad.
 
+## ORACLE
+
 - Cliente inexistente.
 
 <pre>
@@ -145,3 +147,5 @@ BEGIN
 END;
 /
 </pre>
+
+## POSTGRE
