@@ -129,3 +129,19 @@ BEGIN
 END;
 /
 </pre>
+
+- Función.
+
+<pre>
+CREATE OR REPLACE FUNCTION VerificarPago (p_codcliente personas.NIF%type, p_codactividad
+actividades.codigo%type)
+RETURN BOOLEAN
+IS
+    v_cliente BOOLEAN;
+BEGIN
+    Excepciones(v_codcliente, v_codactividad);
+    A_Abonada(v_codcliente, v_codactividad);
+    RETURN v_cliente;
+END;
+/
+</pre>
