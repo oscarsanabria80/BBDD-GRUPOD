@@ -135,7 +135,7 @@ END;
 - Función.
 
 <pre>
-CREATE OR REPLACE FUNCTION VerificarPago (p_codcliente personas.NIF%type, p_codactividad
+CREATE OR REPLACE FUNCTION comprobarPago (p_codcliente personas.NIF%type, p_codactividad
 actividades.codigo%type)
 RETURN BOOLEAN
 IS
